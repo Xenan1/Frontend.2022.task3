@@ -199,22 +199,14 @@ body {
     grid-gap: 15px;
     width: 100%;
     grid-column: 1/4;
+
 }
 .articles__content--list {
     display: flex;
     flex-direction: column;
     grid-gap: 10px;
     width: 100%;
-    grid-column: 1/4;
-    
-}
-.test__article {
-    border: 1px solid black;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: row;
-    margin: 30px;
-    margin-inline: 15%;
+    grid-column: 1/4; 
 }
 .articles-content__item--list {
     border: 1px solid black;
@@ -222,11 +214,11 @@ body {
     display: flex;
     flex-direction: row;
     margin: 10px;
-    margin-inline: 15%;
+    flex-shrink: 1;
 }
 .article__image--list {
     border-radius: 10px 0px 0 10px;
-    width: 300px;
+    width: 40%;
 }
 .article__content {
     display: flex;

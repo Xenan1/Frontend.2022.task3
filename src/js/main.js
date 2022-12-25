@@ -71,6 +71,10 @@ let images = document.querySelectorAll('.article__image')
 let articleSection = document.querySelector('.articles__content')
 
 listSelector.addEventListener('click', function() {
+    articles = document.querySelectorAll('.articles-content__item')
+    images = document.querySelectorAll('.article__image')
+    articleSection = document.querySelector('.articles__content')
+
     if (gridSelector.classList.contains('view-selector__grid--active')) {
         toggleGridSelector()
         toggleListSelector()
@@ -82,7 +86,12 @@ listSelector.addEventListener('click', function() {
 })
 
 gridSelector.addEventListener('click', function() {
+    
     if (listSelector.classList.contains('view-selector__list--active')) {
+        articles = document.querySelectorAll('.articles-content__item--list')
+        images = document.querySelectorAll('.article__image--list')
+        articleSection = document.querySelector('.articles__content--list')
+
         toggleGridSelector()
         toggleListSelector()
 
@@ -129,11 +138,21 @@ addButton.addEventListener('click', function() {
 
     if (isValidArticle) {
         let newArticle = document.createElement('article')
-        newArticle.className = "articles-content__item article"
-
+        if (listSelector.classList.contains('view-selector__list--active')) {
+            newArticle.className = "articles-content__item articles-content__item--list article"
+        }
+        else {
+            newArticle.className = "articles-content__item article"
+        }
+        
         let newArticleImage = document.createElement('img')
         newArticleImage.setAttribute('src', imageUrl.value)
-        newArticleImage.className = 'article__image'
+        if (listSelector.classList.contains('view-selector__list--active')) {
+            newArticleImage.className = 'article__image article__image--list'
+        }
+        else {
+            newArticleImage.className = 'article__image'
+        }
 
         let newArticleContent = document.createElement('div')
         newArticleContent.className = 'article__content'
