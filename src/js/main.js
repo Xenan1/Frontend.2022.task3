@@ -173,10 +173,10 @@ for (let i = 0; i < faqQuestions.length; i++) {
         faqAnswer.classList.toggle('FAQ__answer--active')
         faqAnswer.classList.toggle('FAQ__answer')
         if (faqAnswer.classList.contains('FAQ__answer')) {
-            document.querySelector('.FAQ__mark').innerHTML = '↓'
+            this.lastChild.innerHTML = '↑'
         }
         else {
-            document.querySelector('.FAQ__mark').innerHTML = '↑'
+            this.lastChild.innerHTML = '↓'
         }
     })
 }
